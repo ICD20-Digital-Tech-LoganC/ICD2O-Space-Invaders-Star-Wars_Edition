@@ -4,4 +4,4 @@
 
 [![Deploy Pages](README.md/../../../workflows/Deploy%20Pages/badge.svg)](README.md/../../../actions)
 
-This site can be found at: [https://ICD20-Digital-Tech-LoganC.github.io/ICD2O-Space-Invaders-Star-Wars_Edition/](https://ICD20-Digital-Tech-LoganC.github.io/ICD2O-Space-Invaders-Star-Wars_Edition/)
+This Game can be found at: [https://ICD20-Digital-Tech-LoganC.github.io/ICD2O-Space-Invaders-Star-Wars_Edition/](https://ICD20-Digital-Tech-LoganC.github.io/ICD2O-Space-Invaders-Star-Wars_Edition/)
