@@ -1,13 +1,13 @@
 /* Global Phaser */
 
 // This class is the Splash Scene.
-class SplashScene extends Phaser.Scene {
+class TitleScene extends Phaser.Scene {
 
   // This method is the constructor.
   constructor() {
 
-    super({ key: "splashScene" })
-
+    super({ key: "titleScene" })
+    
     this.splashSceneBackgroundImage = null
     
   }
@@ -30,9 +30,9 @@ class SplashScene extends Phaser.Scene {
   */
   preload() {
 
-    console.log("Splash Scene")
+    console.log("Title Scene")
     this.load.image("splashSceneBackground", "./images/splashSceneImage.png")
-
+    
   }
 
   /* 
@@ -65,4 +65,4 @@ class SplashScene extends Phaser.Scene {
   }
 }
 
-export default SplashScene
+export default TitleScene
