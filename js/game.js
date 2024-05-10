@@ -21,10 +21,10 @@ const config = {
   },
 
   // set background colour
-  backgroundColor: 4092545,
+  backgroundColor: 0xfff243,
   scale: {
     mode: Phaser.Scale.FIT,
-
+    
     // We place the Game in the middle of the page
     autoCenter: Phaser.Scale.CENTER_BOTH
   }
