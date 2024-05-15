@@ -1,14 +1,15 @@
 /* Global Phaser */
 
 // This class is the Splash Scene.
-class TitleScene extends Phaser.Scene {
+class MenuScene extends Phaser.Scene {
 
   // This method is the constructor.
   constructor() {
 
-    super({ key: "titleScene" })
-    
-    this.splashSceneBackgroundImage = null
+    super({ key: "menuScene" })
+
+    this.menuSceneBackgroundImage = null
+    this.startButton = null
   }
 
   /* 
@@ -22,13 +23,14 @@ class TitleScene extends Phaser.Scene {
 
   }
 
-   
+
   // Use it to load assets.
-  
+
   preload() {
 
-    console.log("Title Scene")
-    this.load.image("unrealSceneBackground", "./images/rst_title.png")
+    console.log("Menu Scene")
+    this.load.image('menuSceneBackground', './images/rst_main_menu.png')
+    this.load.image('startButton', './images/play.png')
     
   }
 
@@ -38,9 +40,13 @@ class TitleScene extends Phaser.Scene {
   */
   create(data) {
 
-    this.splashSceneBackgroundImage = this.add.sprite(0, 0, "unrealSceneBackground")
-    this.splashSceneBackgroundImage.x = 1920 / 2
-    this.splashSceneBackgroundImage.y = 1080 / 2
+    this.menuSceneBackgroundImage = this.add.sprite(0, 0, "menuSceneBackground")
+    this.menuSceneBackgroundImage.x = 1920 / 2
+    this.menuSceneBackgroundImage.y = 1080 / 2
+
+    this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'play')
+    this.startButton.setInteractive({ useHandCursor: true })
+    this.startButton.on('pointerdown', () => this.clickButton())
 
   }
 
@@ -51,14 +57,11 @@ class TitleScene extends Phaser.Scene {
   * @param {number} delta - The delta time in ms since the last frame.
   */
   update(time, delta) {
+  }
 
-    if (time > 6200) {
-
-      this.scene.stop("titleScene")
-      this.scene.switch("menuScene")
-
-    }
+  clickButton () {
+    this.scene.start("gameScene")
   }
 }
 
-export default TitleScene
+export default MenuScene
