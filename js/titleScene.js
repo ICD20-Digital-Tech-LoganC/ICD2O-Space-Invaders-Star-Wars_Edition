@@ -28,7 +28,7 @@ class TitleScene extends Phaser.Scene {
   preload() {
 
     console.log("Title Scene")
-    this.load.image("unrealSceneBackground", "./images/rst_title.png")
+    this.load.video("unrealSceneBackground", "./images/unreal_intro.mp4")
     
   }
 
@@ -38,9 +38,10 @@ class TitleScene extends Phaser.Scene {
   */
   create(data) {
 
-    this.splashSceneBackgroundImage = this.add.sprite(0, 0, "unrealSceneBackground")
+    this.splashSceneBackgroundImage = this.add.video(0, 0, "unrealSceneBackground")
     this.splashSceneBackgroundImage.x = 1920 / 2
     this.splashSceneBackgroundImage.y = 1080 / 2
+    this.splashSceneBackgroundImage.play(true)
 
   }
 
@@ -52,9 +53,8 @@ class TitleScene extends Phaser.Scene {
   */
   update(time, delta) {
 
-    if (time > 6200) {
+    if (time > 6000) {
 
-      this.scene.stop("titleScene")
       this.scene.switch("menuScene")
 
     }
