@@ -57,21 +57,33 @@ class GameScene extends Phaser.Scene {
     // move left if a is pressed
     if (keyLeftObj.isDown === true) {
       this.player.setVelocityX(-300)
+      if (this.player.x < 0) {
+        this.player.x = 0
+      }
     }
 
     // move right if d is pressed
     if (keyRightObj.isDown === true) {
       this.player.setVelocityX(300);
+      if (this.player.x > 1920) {
+        this.player.x = 1920
+      }
     }
 
     // move down if s is pressed
     if (keyDownObj.isDown === true) {
       this.player.setVelocityY(300);
+      if (this.player.y > 1080) {
+        this.player.y = 1080
+      }
     }
 
     // move up if w is pressed
     if (keyUpObj.isDown === true) {
       this.player.setVelocityY(-300);
+      if (this.player.y < 0) {
+        this.player.y = 0
+      }
     }
     
     // fire laser using spacebar if the spacebar is not released or being pressed
