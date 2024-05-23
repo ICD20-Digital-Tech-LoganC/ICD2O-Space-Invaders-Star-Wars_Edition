@@ -29,8 +29,8 @@ class MenuScene extends Phaser.Scene {
   preload() {
 
     console.log("Menu Scene")
-    this.load.image('menuSceneBackground', './images/rst_main_menu.png')
-    this.load.image('play', './images/play.png')
+    this.load.image('menuSceneBackground', './assets/rst_main_menu.png')
+    this.load.image('play', './assets/play.png')
     
   }
 

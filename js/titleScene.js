@@ -28,7 +28,7 @@ class TitleScene extends Phaser.Scene {
   preload() {
 
     console.log("Title Scene")
-    this.load.video("unrealSceneBackground", "./images/unreal_intro.mp4")
+    this.load.video("unrealSceneBackground", "./assets/unreal_intro.mp4")
     
   }
 
