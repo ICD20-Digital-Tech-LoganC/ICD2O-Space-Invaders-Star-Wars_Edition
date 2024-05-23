@@ -83,14 +83,14 @@ class GameScene extends Phaser.Scene {
       this.physics.pause()
       this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'Game Over, You Lose!\nClick to play again.', this.gameOverTextStyle).setOrigin(0.5)
       this.gameOverText.setInteractive({ useHandCursor: true })
-      this.gameOverText.on('pointerdown', () => this.scene.start('gameScene'))
+      this.gameOverText.on('pointerdown', () => this.scene.start('gameScene'), this.score = 0)
       this.input.off
     }.bind(this))
   }
 
   update(time, delta) {
 
-    // player movement
+    // player keybinds
     const keyLeftObj = this.input.keyboard.addKey('A')
     const keyRightObj = this.input.keyboard.addKey('D')
     const keyDownObj = this.input.keyboard.addKey('S')
@@ -132,10 +132,6 @@ class GameScene extends Phaser.Scene {
         if (this.player.y < 0) {
           this.player.y = 0
         }
-      }
-
-      if (keySpaceObj.isDown === true) {
-
       }
 
       // fire laser using spacebar if the spacebar is not released or being pressed
